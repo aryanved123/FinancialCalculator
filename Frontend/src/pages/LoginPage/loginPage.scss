@@ -1,0 +1,133 @@
+// Core Variables - Simplified for stability
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$error-color: #ff4d4d;
+$text-color: #333;
+$border-color: #ccc;
+$form-background-transparent: rgba(255, 255, 255, 0.9);
+$input-bg-color: #f8f9fa;
+
+// Login Container
+.login-container {
+  background-image: url("../../assets/login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+// Login Form - Stable structure
+.login-form {
+  background: $form-background-transparent;
+  width: 100%;
+  max-width: 360px; // Fixed width for stability
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  
+  // Title with fixed styling
+  .login-title {
+    font-family: "Judson", serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0 0 25px 0;
+    text-align: center;
+  }
+  
+  // Error message
+  .error-message {
+    color: $error-color;
+    background-color: rgba($error-color, 0.1);
+    border: 1px solid $error-color;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  // Input group with stable sizing
+  .input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    
+    input {
+      display: block;
+      width: 100%; // Makes input fill container
+      height: 44px; // Fixed height for stability
+      padding: 8px 12px;
+      font-size: 16px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      background-color: $input-bg-color;
+      color: $text-color;
+      box-sizing: border-box; // Critical for stable sizing
+      
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+      }
+    }
+  }
+  
+  // Button container
+  .login-button-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  // Login button with stable styling
+  .login-button {
+    display: block;
+    width: 100%;
+    height: 44px; // Fixed height matching inputs
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: $primary-hover-color;
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba($primary-color, 0.4);
+    }
+  }
+  
+  // Signup link
+  .signup {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Minimal responsive adjustments to maintain stability
+@media (max-width: 400px) {
+  .login-form {
+    padding: 25px 20px;
+  }
+}

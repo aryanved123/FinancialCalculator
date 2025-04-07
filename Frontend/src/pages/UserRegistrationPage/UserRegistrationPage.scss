@@ -1,0 +1,148 @@
+// Define color variables for easy theme management
+$primary-color: #0d1fc9;
+$secondary-color: #170e96;
+$text-color: #0a1551;
+$border-color: #0a1551;
+
+// Section Wrapper
+.user-registration-container {
+  width: 100%;
+  max-width: 400px;
+  height: 100vh; // Full height of the viewport
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: auto;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+// Typography inside container
+.user-registration-container h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.user-registration-container p {
+  color: $secondary-color;
+  margin-top: 0.5rem;
+  font-size: 14px;
+  text-align: center;
+}
+
+// Form Styling inside container
+.user-registration-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  flex-grow: 1; // To make the form take up available space in the container
+  justify-content: center;
+}
+
+// Input Fields inside container
+.user-registration-container input,
+.user-registration-container textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.25rem;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+  font-size: 14px;
+  transition: border-color 0.3s ease-in-out;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(13, 31, 201, 0.5);
+    outline: none;
+  }
+}
+
+// Labels inside container
+.user-registration-container label {
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+// Buttons inside container
+.user-registration-container button {
+  padding: 0.5rem;
+  width: 120px;
+  background: green;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: darkgreen;
+  }
+}
+
+// Error Messages inside container
+.user-registration-container .errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.25rem;
+  margin-bottom: 0.25rem;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+// Utility Classes inside container
+.user-registration-container .valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.user-registration-container .register-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+.user-registration-container .login-link {
+  margin-left: 0.3rem; // Adds spacing between the text and the link
+  font-size: 15px;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+.user-registration-container .invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.user-registration-container .instructions {
+  font-size: 12px;
+  background: black;
+  color: white;
+  padding: 0.25rem;
+  border-radius: 5px;
+  position: relative;
+  bottom: -5px;
+  text-align: left;
+}
+
+// Hide elements inside container
+.user-registration-container .offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.user-registration-container .hide {
+  display: none;
+}

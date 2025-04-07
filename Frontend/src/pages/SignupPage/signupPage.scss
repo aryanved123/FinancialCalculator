@@ -1,0 +1,196 @@
+// Core Variables
+$primary-color: #007bff;
+$primary-hover-color: #0056b3;
+$error-color: #ff4d4d;
+$background-color: #f5f5f5;
+$text-color: #333;
+$border-color: #ccc;
+$form-background-transparent: rgba(240, 233, 233, 0.9); // Slightly more opaque for better visibility
+$input-focus-border: #4b70f5;
+$input-bg-color: #dceaf3;
+
+// Spacing Variables
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+
+// Form Dimensions - Reduced for more compact appearance
+$form-width: 320px;
+$input-height: 42px;
+$border-radius: 8px;
+$input-border-radius: 8px; // Slightly reduced for a more compact look
+
+// Main Container
+.signup-container {
+  // Background styling
+  background-image: url("../../assets/signup.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  // Size and positioning
+  height: 100vh;
+  width: 100%;
+  min-height: 400px; // Reduced min-height
+  
+  // Flex centering with proper spacing
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $spacing-xl; // Added more padding to prevent touching edges
+  box-sizing: border-box;
+}
+
+// Form Element - More compact
+.signup-container .signup-form {
+  // Background and borders
+  background: $form-background-transparent;
+  border-radius: $border-radius;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  
+  // Sizing and spacing - More compact
+  width: 100%;
+  max-width: $form-width;
+  padding: $spacing-lg; // Reduced padding
+  box-sizing: border-box;
+  margin: auto; // Ensures centering
+}
+
+// Form Title - More compact
+.signup-container .signup-form .signup-title {
+  font-family: "Judson", serif;
+  font-size: 1.75rem; // Slightly smaller
+  font-weight: 600;
+  text-align: center;
+  color: $text-color;
+  margin: 0 0 $spacing-md 0; // Reduced margin
+  line-height: 1.2;
+}
+
+// Input Groups - More compact
+.signup-container .signup-form .input-group {
+  margin-bottom: $spacing-md; // Reduced margin
+  width: 100%;
+}
+
+// Input Elements - More compact
+.signup-container .signup-form .input-group input {
+  // Core styling
+  width: 100%;
+  height: $input-height; // Reduced height
+  padding: 0 $spacing-md;
+  box-sizing: border-box;
+  
+  // Visual styling
+  border: 1px solid $border-color;
+  border-radius: $input-border-radius;
+  background-color: $input-bg-color;
+  
+  // Typography
+  font-size: 0.95rem; // Slightly smaller font
+  line-height: 1.4;
+  color: $text-color;
+  
+  // Interaction
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  
+  &:focus {
+    border-color: $input-focus-border;
+    box-shadow: 0 0 0 3px rgba($input-focus-border, 0.25);
+  }
+}
+
+// Button Styling - More compact
+.signup-container .signup-form .signup-button {
+  // Core styling
+  display: block;
+  width: 100%;
+  height: $input-height; // Reduced height
+  padding: 0 $spacing-md;
+  box-sizing: border-box;
+  
+  // Visual styling
+  background-color: $primary-color;
+  border: none;
+  border-radius: $input-border-radius;
+  
+  // Typography
+  color: #fff;
+  font-size: 0.95rem; // Slightly smaller font
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  
+  // Interaction
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: $primary-hover-color;
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.25);
+  }
+}
+
+// Login Link - More compact
+.signup-container .signup-form .login-link {
+  text-align: center;
+  font-size: 0.85rem; // Smaller font
+  margin-top: $spacing-md;
+  color: $text-color;
+  
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Media Queries - Fixed with proper targeting */
+
+/* Mobile devices (Portrait) */
+@media (max-width: 600px) {
+  .signup-container .signup-form {
+    padding: $spacing-md;
+    max-width: 280px; // Even smaller on mobile
+  }
+
+  .signup-container .signup-form .signup-title {
+    font-size: 1.4rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  .signup-container .signup-form .input-group {
+    margin-bottom: $spacing-sm;
+  }
+
+  .signup-container .signup-form .input-group input {
+    font-size: 0.85rem;
+    height: 38px; // Slightly smaller height on mobile
+  }
+
+  .signup-container .signup-form .signup-button {
+    font-size: 0.85rem;
+    height: 38px; // Slightly smaller height on mobile
+  }
+
+  .signup-container .signup-form .login-link {
+    font-size: 0.75rem;
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .signup-container .signup-form {
+    padding: $spacing-lg;
+    max-width: 360px;
+  }
+}

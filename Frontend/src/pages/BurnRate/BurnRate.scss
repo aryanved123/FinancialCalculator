@@ -1,0 +1,266 @@
+// 🎨 Color Variables
+$primary-color: #4a4a4a;
+$primary-hover: #333;
+$text-color: #2c2c2c;
+$background-color: #fff;
+$panel-background: #f8f8f8;
+$border-color: #ddd;
+$input-bg: #fff;
+$input-focus-border: #4b70f5;
+
+// Button colors
+$button-primary: #2176ff;      // Vibrant blue for primary button
+$button-primary-hover: #1a65db; // Darker blue on hover
+$button-download: #28a745;     // Green for download buttons
+$button-download-hover: #218838; // Light green hover for download buttons
+$shadow-color: rgba(0, 0, 0, 0.08);
+
+// Header area with title
+.calculator-header {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 15px 20px;
+  background: $panel-background;
+  border: 1px solid $border-color;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 2px 15px $shadow-color;
+  
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: $text-color;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+// Two-column layout container
+.calculator-container {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: row;
+  background: $background-color;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 15px $shadow-color;
+  overflow: hidden; // Ensures content stays within rounded corners
+  border: 1px solid $border-color;
+  
+  // Left side - Calculation Form
+  .calculation-section {
+    flex: 1;
+    padding: 25px;
+    border-right: 1px solid $border-color;
+  }
+  
+  // Right side - Results
+  .results-section {
+    flex: 1;
+    padding: 25px;
+    background: $input-bg;
+  }
+}
+
+// 📌 Form Styling
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+
+    label {
+      font-weight: 600;
+      color: $text-color;
+      margin-bottom: 8px;
+      width: 100%;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid $border-color;
+      border-radius: 5px;
+      background: $input-bg;
+      font-size: 16px;
+      transition: 0.3s;
+      text-align: left;
+
+      &:focus {
+        border-color: $input-focus-border;
+        box-shadow: 0px 0px 6px rgba(75, 112, 245, 0.2);
+        outline: none;
+      }
+    }
+  }
+}
+// Add this to your BurnRate.scss file
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.form-group {
+  input:invalid {
+    border-color: #dc3545;
+  }
+}
+
+// ✅ Submit Button Styling
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: $button-primary;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    background: $button-primary-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 118, 255, 0.25);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// 🎯 Result Display
+.result {
+  height: 100%;
+  
+  // Empty state message
+  .empty-result {
+    color: #888;
+    font-style: italic;
+    padding: 30px 0;
+    text-align: center;
+    border: 2px dashed #e0e0e0;
+    border-radius: 6px;
+    background: #fafafa;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $border-color;
+    text-align: left;
+  }
+
+  .burn-rate-display {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: $panel-background;
+    border-radius: 6px;
+    border: 1px solid $border-color;
+    
+    p {
+      font-size: 24px;
+      color: $button-primary;
+      font-weight: 600;
+      margin: 0;
+    }
+  }
+  
+  // Results info display
+  .result-details {
+    margin: 20px 0;
+    text-align: left;
+    
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px dotted #eee;
+      
+      .label {
+        font-weight: 600;
+        color: $text-color;
+      }
+      
+      .value {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  // Download section
+  .download-section {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid $border-color;
+    
+    h4 {
+      font-size: 16px;
+      color: $text-color;
+      margin-bottom: 12px;
+      text-align: left;
+    }
+  }
+}
+
+// ✅ Download Buttons - Green
+.download-btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  background: $button-download;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    background: $button-download-hover;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.25);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// 📌 Mobile-Responsive Styles
+@media (max-width: 768px) {
+  .calculator-header {
+    margin: 15px 15px 0;
+    max-width: calc(100% - 30px);
+  }
+  
+  .calculator-container {
+    flex-direction: column;
+    margin: 0 15px 15px;
+    max-width: calc(100% - 30px);
+    
+    .calculation-section {
+      border-right: none;
+      border-bottom: 1px solid $border-color;
+    }
+  }
+}
