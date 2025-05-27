@@ -5,7 +5,7 @@
 # select a framework =>React
 
 # select a variant => Javascript
-
+    - cd frontend
     - npm install
     - npm run dev
 
